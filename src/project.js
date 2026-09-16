@@ -4,7 +4,11 @@ function project (name) {
 
   return {
     name: name,
-    todos: []
+    todos: [],
+
+    addTodo(){
+      const odinProject = project("The Odin Project");
+    }
   }
 }
 
@@ -23,10 +27,14 @@ const myTodo = todo(
   "High"
 );
 
+const addTodo = () => {
+  project.todos.push(todo);
+}
 
-projects[1].todos.push(myTodo)
 
-console.log(projects[1].todos);
+// projects[1].todos.push(myTodo)
+
+// console.log(projects[1].todos);
 
 
 
