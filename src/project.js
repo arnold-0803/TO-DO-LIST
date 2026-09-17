@@ -1,18 +1,18 @@
 // import { todo } from "./todo";
 
-function project (name) {
+export function project (name) {
 
   return {
     name: name,
     todos: [],
 
-    addTodo(){
-      const odinProject = project("The Odin Project");
+    addTodo(newTodo){
+      this.todos.push(newTodo);
     }
   }
 }
 
-const projects = [];
+export const projects = [];
 
 projects.push(project("Default"));
 projects.push(project("The Odin Project"));
@@ -27,14 +27,10 @@ const myTodo = todo(
   "High"
 );
 
-const addTodo = () => {
-  project.todos.push(todo);
-}
 
+projects[1].addTodo(myTodo)
 
-// projects[1].todos.push(myTodo)
-
-// console.log(projects[1].todos);
+console.log(projects[1].todos);
 
 
 
