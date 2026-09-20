@@ -1,4 +1,4 @@
-function todo (title, description, dueDate, priority){
+export function todo (title, description, dueDate, priority){
 
   return {
     title,

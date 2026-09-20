@@ -1,4 +1,4 @@
-// import { todo } from "./todo";
+import { todo } from "./todo.js";
 
 export function project (name) {
 
@@ -16,21 +16,15 @@ export const projects = [];
 
 projects.push(project("Default"));
 projects.push(project("The Odin Project"));
-projects.push(project("Personal"));
 
-todo();
-
-const myTodo = todo(
-  "Finish Todo List",
-  "Complete the Odin Project Todo List",
-  "2026-09-20",
-  "High"
-);
+// const myTodo = todo(
+//   "Finish Todo List",
+//   "Complete the Odin Project Todo List",
+//   "2026-09-20",
+//   "High"
+// );
 
 
-projects[1].addTodo(myTodo)
+// projects[1].addTodo(myTodo)
 
-console.log(projects[1].todos);
-
-
-
+// console.log(projects[1].todos);
