@@ -5,5 +5,6 @@ export function todo (title, description, dueDate, priority){
     description,
     dueDate,
     priority,
+    completed: false,
   }
 }

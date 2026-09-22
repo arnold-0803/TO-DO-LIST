@@ -15,12 +15,18 @@ export function createTodo(title, description, dueDate, priority, project) {
   );
 
   project.addTodo(newTodo);
+
+  return newTodo;
 }
 
-createTodo(
-  "Finish Todo List",
-  "Complete the Odin Project Todo List",
-  "2026-09-20",
-  "High",
-  projects[1]
-);
+export function completeTodo (todo) {
+  todo.completed = true;
+}
+
+export function changePriority (todo, newPriority) {
+  todo.priority = newPriority;
+}
+
+export function deleteTodo (todo, project) {
+  const index = project.todos.indexOf(todo);
+}
