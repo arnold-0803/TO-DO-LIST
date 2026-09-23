@@ -29,4 +29,6 @@ export function changePriority (todo, newPriority) {
 
 export function deleteTodo (todo, project) {
   const index = project.todos.indexOf(todo);
+  
+  project.todos.splice(index, 1);
 }

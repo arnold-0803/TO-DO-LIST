@@ -1,5 +1,5 @@
 import { projects } from "./project.js";
-import { completeTodo, createProject, createTodo } from "./todoController.js";
+import { completeTodo, createProject, createTodo, deleteTodo } from "./todoController.js";
 
 const myTodo = createTodo(
   "Finish Todo List",
@@ -17,5 +17,10 @@ console.log(projects[1].todos);
 completeTodo(myTodo);
 
 console.log(myTodo.completed);
+
+deleteTodo(myTodo, projects[1]);
+
+console.log(projects[1].todos);
+
 
 
