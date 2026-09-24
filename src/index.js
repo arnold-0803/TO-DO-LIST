@@ -1,3 +1,4 @@
+import { renderProjects } from "./displayController.js";
 import { projects } from "./project.js";
 import { completeTodo, createProject, createTodo, deleteTodo } from "./todoController.js";
 
@@ -22,5 +23,5 @@ deleteTodo(myTodo, projects[1]);
 
 console.log(projects[1].todos);
 
-
+renderProjects();
 
