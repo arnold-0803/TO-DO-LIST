@@ -19,9 +19,9 @@ completeTodo(myTodo);
 
 console.log(myTodo.completed);
 
-deleteTodo(myTodo, projects[1]);
+// deleteTodo(myTodo, projects[1]);
 
-console.log(projects[1].todos);
+// console.log(projects[1].todos);
 
 renderProjects();
 

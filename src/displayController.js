@@ -4,10 +4,27 @@ export function renderProjects() {
   const content = document.querySelector("#content");
 
   projects.forEach((project) => {
-    const projectElement = document.createElement("div");
+    const projectsContainer = document.createElement("div");
+    const projectButton = document.createElement("button");
 
-    projectElement.textContent = project.name;
+    projectsContainer.classList.add("projects");
 
-    content.appendChild(projectElement);
+    projectButton.textContent = project.name;
+
+    projectButton.addEventListener("click", () => {
+      console.log(project);
+      
+    });
+
+    projectsContainer.append(projectButton);
+    content.appendChild(projectsContainer);
+
+    project.todos.forEach((todo) => {
+      const todoElement = document.createElement("div");
+
+      todoElement.textContent = todo.title;
+
+      projectsContainer.append(todoElement);
+    });
   });
 }
