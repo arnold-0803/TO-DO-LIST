@@ -12,19 +12,40 @@ export function renderProjects() {
     projectButton.textContent = project.name;
 
     projectButton.addEventListener("click", () => {
-      console.log(project);
-      
+      renderTodos(project);
     });
 
     projectsContainer.append(projectButton);
     content.appendChild(projectsContainer);
+  });
+}
 
-    project.todos.forEach((todo) => {
-      const todoElement = document.createElement("div");
+export function renderTodos (project) {
+  const todosContainer = document.querySelector("#todos");
 
-      todoElement.textContent = todo.title;
+  todosContainer.innerHTML = "";
 
-      projectsContainer.append(todoElement);
-    });
+  project.todos.forEach((todo) => {
+    const todoContent  = document.createElement("div");
+    const todoTitle = document.createElement("div");
+    const todoDescription = document.createElement("div");
+    const todoDueDate = document.createElement("div");
+    const todoPriority = document.createElement("div");
+    // const todoComplete = document.createElement("div");
+
+    todoTitle.textContent = todo.title;
+    todoDescription.textContent = todo.description;
+    todoDueDate.textContent = todo.dueDate;
+    todoPriority.textContent = todo.priority;
+    // todoComplete.textContent = todo.complete;
+
+    todosContainer.append(
+      todoTitle,
+      todoDescription,
+      todoDueDate,
+      todoPriority,
+      // todoComplete
+    );
+    content.appendChild(todosContainer);
   });
 }
