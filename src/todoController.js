@@ -19,8 +19,8 @@ export function createTodo(title, description, dueDate, priority, project) {
   return newTodo;
 }
 
-export function completeTodo (todo) {
-  todo.completed = true;
+export function completeTodo (todo, completed) {
+  todo.completed = completed;
 }
 
 export function changePriority (todo, newPriority) {
@@ -31,4 +31,11 @@ export function deleteTodo (todo, project) {
   const index = project.todos.indexOf(todo);
   
   project.todos.splice(index, 1);
+}
+
+export function editTodo (todo, title, description, dueDate, priority) {
+  todo.title = title;
+  todo.description = description;
+  todo.dueDate = dueDate;
+  todo.priority = priority;
 }

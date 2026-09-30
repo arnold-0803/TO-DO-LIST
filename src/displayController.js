@@ -1,4 +1,5 @@
 import { projects } from "./project.js";
+import { completeTodo, deleteTodo, editTodo } from "./todoController.js";
 
 export function renderProjects() {
   const content = document.querySelector("#content");
@@ -32,18 +33,23 @@ export function renderTodos (project) {
     const todoDescription = document.createElement("div");
     const todoDueDate = document.createElement("div");
     const todoPriority = document.createElement("div");
-    // const todoComplete = document.createElement("div");
     const deleteButton = document.createElement("button");
+    const completeCheckbox = document.createElement("input");
+    const editButton = document.createElement("button");
 
     todoTitle.textContent = todo.title;
     todoDescription.textContent = todo.description;
     todoDueDate.textContent = todo.dueDate;
     todoPriority.textContent = todo.priority;
-    // todoComplete.textContent = todo.complete;
 
     todoDetails.style.display = "none";
 
     deleteButton.textContent = "Delete";
+
+    completeCheckbox.type = "checkbox";
+    completeCheckbox.checked = todo.completed;
+
+    editButton.textContent = "Edit";
 
     todoTitle.addEventListener("click", () => {
       if(todoDetails.style.display === "none"){
@@ -53,15 +59,61 @@ export function renderTodos (project) {
       }
     });
 
+    deleteButton.addEventListener("click", () => {
+      deleteTodo(todo, project);
+      todoContent.remove();
+    });
+
+    completeCheckbox.addEventListener("change", () => {
+      completeTodo(todo, completeCheckbox.checked);
+    });
+
+    editButton.addEventListener("click", () => {
+      const descriptionInput = document.createElement("textarea");
+      descriptionInput.value = todo.description;
+
+      const dueDateInput = document.createElement("input");
+      dueDateInput.type = "date";
+      dueDateInput.value = todo.dueDate;
+
+      const priorityInput = document.createElement("input");
+      priorityInput.value = todo.priority;
+
+      const saveButton = document.createElement("button");
+      saveButton.textContent = "Save";
+
+      saveButton.addEventListener("click", () => {
+        editTodo(
+          todo,
+          todo.title,
+          descriptionInput.value,
+          dueDateInput.value,
+          priorityInput.value
+        );
+      });
+
+      todoDetails.innerHTML = "";
+
+      todoDetails.append(
+        descriptionInput,
+        dueDateInput,
+        priorityInput,
+        saveButton
+      );
+
+      todoDetails.style.display = "block";
+    });
+
     todoDetails.append(
       todoDescription,
       todoDueDate,
-      todoPriority,
-      // todoComplete
+      todoPriority
     );
     todoContent.append(
+      completeCheckbox,
       todoTitle,
       todoDetails,
+      editButton,
       deleteButton
     );
     todosContainer.append(todoContent);
