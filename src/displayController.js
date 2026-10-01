@@ -69,6 +69,10 @@ export function renderTodos (project) {
     });
 
     editButton.addEventListener("click", () => {
+      const titleInput = document.createElement("input");
+      titleInput.value = todo.title;
+      todoTitle.replaceWith(titleInput);
+
       const descriptionInput = document.createElement("textarea");
       descriptionInput.value = todo.description;
 
@@ -85,11 +89,13 @@ export function renderTodos (project) {
       saveButton.addEventListener("click", () => {
         editTodo(
           todo,
-          todo.title,
+          titleInput.value,
           descriptionInput.value,
           dueDateInput.value,
           priorityInput.value
         );
+
+        renderTodos(project);
       });
 
       todoDetails.innerHTML = "";
