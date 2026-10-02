@@ -10,9 +10,34 @@ const myTodo = createTodo(
   projects[1]
 );
 
+const projectNameInput = document.querySelector("#project-name");
+const addProjectButton = document.querySelector("#add-project");
+
+addProjectButton.addEventListener("click", () => {
+  createProject(projectNameInput.value);
+  renderProjects();
+});
+
+const todoProjectSelect = document.querySelector("#todo-project");
+
+function renderProjectOptions () {
+  todoProjectSelect.innerHTML = "";
+
+  projects.forEach((project) => {
+    const option = document.createElement("option");
+
+    option.value = project.name;
+    option.textContent = project.name;
+
+    todoProjectSelect.append(option);
+  });
+}
+
+renderProjectOptions();
+
 // createProject("Personal");
 
-console.log(projects[1].todos);
+console.log(projects);
 // console.log(createTodo);
 
 completeTodo(myTodo);

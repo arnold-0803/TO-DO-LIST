@@ -4,6 +4,8 @@ import { completeTodo, deleteTodo, editTodo } from "./todoController.js";
 export function renderProjects() {
   const content = document.querySelector("#content");
 
+  content.innerHTML = "";
+
   projects.forEach((project) => {
     const projectsContainer = document.createElement("div");
     const projectButton = document.createElement("button");
