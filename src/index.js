@@ -1,24 +1,43 @@
 import { renderProjects, renderTodos } from "./displayController.js";
 import { projects } from "./project.js";
-import { completeTodo, createProject, createTodo, deleteTodo } from "./todoController.js";
-
-const myTodo = createTodo(
-  "Finish Todo List",
-  "Complete the Odin Project Todo List",
-  "2026-09-20",
-  "High",
-  projects[1]
-);
+import { createProject, createTodo } from "./todoController.js";
 
 const projectNameInput = document.querySelector("#project-name");
 const addProjectButton = document.querySelector("#add-project");
 
 addProjectButton.addEventListener("click", () => {
   createProject(projectNameInput.value);
+
   renderProjects();
+
+  renderProjectOptions();
 });
 
 const todoProjectSelect = document.querySelector("#todo-project");
+const todoTitleInput = document.querySelector("#todo-title");
+const todoDescriptionInput = document.querySelector("#todo-description");
+const todoDueDateInput = document.querySelector("#todo-due-date");
+const todoPriorityInput = document.querySelector("#todo-priority");
+const addTodoButton = document.querySelector("#add-todo");
+
+addTodoButton.addEventListener("click", () => {
+  const selectedProject = projects[todoProjectSelect.value];
+
+  createTodo(
+    todoTitleInput.value,
+    todoDescriptionInput.value,
+    todoDueDateInput.value,
+    todoPriorityInput.value,
+    selectedProject
+  );
+
+  renderTodos(selectedProject);
+
+  todoTitleInput.value = "";
+  todoDescriptionInput.value = "";
+  todoDueDateInput.value = "";
+  todoPriorityInput.value = "";
+});
 
 function renderProjectOptions () {
   todoProjectSelect.innerHTML = "";
@@ -26,7 +45,7 @@ function renderProjectOptions () {
   projects.forEach((project) => {
     const option = document.createElement("option");
 
-    option.value = project.name;
+    option.value = projects.indexOf(project);
     option.textContent = project.name;
 
     todoProjectSelect.append(option);
@@ -34,19 +53,6 @@ function renderProjectOptions () {
 }
 
 renderProjectOptions();
-
-// createProject("Personal");
-
-console.log(projects);
-// console.log(createTodo);
-
-completeTodo(myTodo);
-
-console.log(myTodo.completed);
-
-// deleteTodo(myTodo, projects[1]);
-
-// console.log(projects[1].todos);
 
 renderProjects();
 
