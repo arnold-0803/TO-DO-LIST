@@ -6,6 +6,10 @@ const projectNameInput = document.querySelector("#project-name");
 const addProjectButton = document.querySelector("#add-project");
 
 addProjectButton.addEventListener("click", () => {
+  if(projectNameInput.value === "") {
+    return;
+  }
+
   createProject(projectNameInput.value);
 
   renderProjects();
@@ -21,6 +25,10 @@ const todoPriorityInput = document.querySelector("#todo-priority");
 const addTodoButton = document.querySelector("#add-todo");
 
 addTodoButton.addEventListener("click", () => {
+  if(todoTitleInput.value === ""){
+    return;
+  }
+  
   const selectedProject = projects[todoProjectSelect.value];
 
   createTodo(
@@ -55,6 +63,3 @@ function renderProjectOptions () {
 renderProjectOptions();
 
 renderProjects();
-
-renderTodos(projects[1]);
-
