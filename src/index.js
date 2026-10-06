@@ -1,5 +1,6 @@
 import { renderProjects, renderTodos } from "./displayController.js";
 import { projects } from "./project.js";
+import { loadProjects, saveProjects } from "./storage.js";
 import { createProject, createTodo } from "./todoController.js";
 
 const projectNameInput = document.querySelector("#project-name");
@@ -13,8 +14,8 @@ addProjectButton.addEventListener("click", () => {
   createProject(projectNameInput.value);
 
   renderProjects();
-
   renderProjectOptions();
+  saveProjects(projects);
 });
 
 const todoProjectSelect = document.querySelector("#todo-project");
@@ -40,6 +41,7 @@ addTodoButton.addEventListener("click", () => {
   );
 
   renderTodos(selectedProject);
+  saveProjects(projects);
 
   todoTitleInput.value = "";
   todoDescriptionInput.value = "";
@@ -61,5 +63,5 @@ function renderProjectOptions () {
 }
 
 renderProjectOptions();
-
 renderProjects();
+loadProjects();
