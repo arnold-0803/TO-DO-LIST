@@ -9,6 +9,10 @@ export function saveProjects(projects) {
 export function loadProjects() {
   const savedProjects = JSON.parse(localStorage.getItem("projects"));
 
+  if(!savedProjects) {
+    return;
+  }
+
   projects.length = 0;
 
   savedProjects.forEach((savedProject) => {
@@ -21,6 +25,8 @@ export function loadProjects() {
         savedTodo.dueDate,
         savedTodo.priority
       );
+
+      newTodo.completed = savedTodo.completed
 
       newProject.addTodo(newTodo);
     });

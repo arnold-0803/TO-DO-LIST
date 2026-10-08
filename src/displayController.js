@@ -1,4 +1,5 @@
 import { projects } from "./project.js";
+import { saveProjects } from "./storage.js";
 import { completeTodo, deleteTodo, editTodo } from "./todoController.js";
 
 export function renderProjects() {
@@ -63,11 +64,13 @@ export function renderTodos (project) {
 
     deleteButton.addEventListener("click", () => {
       deleteTodo(todo, project);
+      saveProjects(projects);
       todoContent.remove();
     });
 
     completeCheckbox.addEventListener("change", () => {
       completeTodo(todo, completeCheckbox.checked);
+      saveProjects(projects);
     });
 
     editButton.addEventListener("click", () => {
@@ -96,6 +99,8 @@ export function renderTodos (project) {
           dueDateInput.value,
           priorityInput.value
         );
+
+        saveProjects(projects);
 
         renderTodos(project);
       });

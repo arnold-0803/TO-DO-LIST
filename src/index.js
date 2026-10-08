@@ -62,6 +62,6 @@ function renderProjectOptions () {
   });
 }
 
+loadProjects();
 renderProjectOptions();
 renderProjects();
-loadProjects();
