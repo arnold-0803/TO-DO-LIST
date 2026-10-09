@@ -119,12 +119,12 @@ export function renderTodos (project) {
 
     todoDetails.append(
       todoDescription,
-      todoDueDate,
       todoPriority
     );
     todoContent.append(
       completeCheckbox,
       todoTitle,
+      todoDueDate,
       todoDetails,
       editButton,
       deleteButton
