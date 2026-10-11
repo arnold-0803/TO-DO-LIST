@@ -2,6 +2,7 @@ import { renderProjects, renderTodos } from "./displayController.js";
 import { projects } from "./project.js";
 import { loadProjects, saveProjects } from "./storage.js";
 import { createProject, createTodo } from "./todoController.js";
+import "./style.css";
 
 const projectNameInput = document.querySelector("#project-name");
 const addProjectButton = document.querySelector("#add-project");

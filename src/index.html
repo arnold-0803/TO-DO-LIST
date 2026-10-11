@@ -1,30 +1,69 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Taskflow | Todo Dashboard</title>
 </head>
 <body>
-  <div id="content"></div>
-  <div id="todos"></div>
-  <div id="project-form">
-    <input type="text" id="project-name" placeholder="Project Name">
-    <button id="add-project">Add Project</button>
+  <div class="app-layout">
+
+    <aside class="sidebar">
+      <div class="app-brand">
+        <h1>Taskflow</h1>
+        <p>Your space to get things done.</p>
+      </div>
+
+      <section class="projects-section">
+        <h2>MY PROJECTS</h2>
+        <div id="content"></div>
+
+        <div id="project-form">
+          <input type="text" id="project-name" placeholder="Project name">
+          <button id="add-project">+ Add project</button>
+        </div>
+      </section>
+    </aside>
+
+    <main class="main-workspace">
+      <header class="workspace-header">
+        <div>
+          <p class="eyebrow">YOUR WORKSPACE</p>
+          <h2>My Tasks</h2>
+          <p class="workspace-subtitle">Keep track of what matters.</p>
+        </div>
+      </header>
+
+      <section class="tasks-section">
+        <div id="todos"></div>
+      </section>
+    </main>
+
+    <aside class="task-panel">
+      <h2>Create a task</h2>
+      <p class="panel-subtitle">Add something to your list.</p>
+
+      <div id="todo-form">
+        <label for="todo-title">Task title</label>
+        <input type="text" id="todo-title" placeholder="What needs doing?">
+
+        <label for="todo-description">Description</label>
+        <textarea id="todo-description" placeholder="Add some details"></textarea>
+
+        <label for="todo-due-date">Due date</label>
+        <input type="date" id="todo-due-date">
+
+        <label for="todo-priority">Priority</label>
+        <input type="text" id="todo-priority" placeholder="e.g. high, medium, low">
+
+        <label for="todo-project">Project</label>
+        <select id="todo-project"></select>
+
+        <button id="add-todo">Create task</button>
+      </div>
+    </aside>
+
   </div>
-  <div id="todo-form">
-    <input type="text" id="todo-title" placeholder="Title">
-    <textarea id="todo-description" placeholder="Description"></textarea>
-    <input type="date" id="todo-due-date">
-    <input type="text" id="todo-priority" placeholder="Priority">
-
-    <select name="" id="todo-project"></select>
-
-    <button id="add-todo">Add Todo</button>
-  </div>
-
-  <script type="module" src="index.js"></script>
-  <!-- <script src="todo.js"></script>
-  <script src="project.js"></script> -->
 </body>
 </html>

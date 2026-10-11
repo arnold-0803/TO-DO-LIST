@@ -1,0 +1,59 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6fb;
+  color: #20243a;
+}
+
+.app-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) 300px;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background-color: #20243a;
+  color: #ffffff;
+  padding: 32px 20px;
+}
+
+.main-workspace {
+  padding: 40px 32px;
+}
+
+.task-panel {
+  background-color: #ffffff;
+  padding: 32px 24px;
+  border-left: 1px solid #e7e9f0;
+}
+
+.app-brand h1 {
+  margin: 0 0 8px;
+}
+
+.app-brand p,
+.workspace-subtitle,
+.panel-subtitle {
+  color: #8990a6;
+  line-height: 1.5;
+}
+
+.sidebar .app-brand p {
+  color: #b5bbcf;
+}
+
+.workspace-header {
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  color: #7063d8;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
