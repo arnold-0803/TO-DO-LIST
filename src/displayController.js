@@ -40,13 +40,22 @@ export function renderTodos (project) {
     const completeCheckbox = document.createElement("input");
     const editButton = document.createElement("button");
 
+    todoContent.classList.add("todo-card");
+    todoTitle.classList.add("todo-title");
+    todoDescription.classList.add("todo-description");
+    todoDueDate.classList.add("todo-due-date");
+    todoPriority.classList.add("todo-priority");
+
+    completeCheckbox.classList.add("todo-checkbox");
+    editButton.classList.add("edit-btn");
+    deleteButton.classList.add("delete-btn");
+
     todoTitle.textContent = todo.title;
     todoDescription.textContent = todo.description;
     todoDueDate.textContent = todo.dueDate;
     todoPriority.textContent = todo.priority;
 
     todoDetails.style.display = "none";
-
     deleteButton.textContent = "Delete";
 
     completeCheckbox.type = "checkbox";

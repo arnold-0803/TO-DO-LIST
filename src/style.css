@@ -57,3 +57,113 @@ body {
   font-weight: bold;
   letter-spacing: 1.5px;
 }
+
+
+/* Project navigation */
+
+.projects {
+  margin-top: 8px;
+}
+
+.projects button {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #dce0ef;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 180ms ease;
+}
+
+.projects button:hover {
+  background-color: #303751;
+}
+
+/* Project section heading */
+
+.projects-section h2 {
+  margin-top: 36px;
+  margin-bottom: 16px;
+  color: #9ca5c0;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+/* Todo cards */
+
+.todo-card {
+  margin-bottom: 14px;
+  padding: 20px;
+  border: 1px solid #e7e9f0;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 3px 10px rgb(30 40 80 / 4%);
+  transition: box-shadow 180ms ease;
+}
+
+.todo-card:hover {
+  box-shadow: 0 6px 18px rgb(30 40 80 / 8%);
+}
+
+.todo-title {
+  margin-bottom: 8px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.todo-due-date {
+  margin-bottom: 12px;
+  color: #8990a6;
+  font-size: 13px;
+}
+
+.todo-description {
+  margin-bottom: 10px;
+  color: #555d75;
+  line-height: 1.6;
+}
+
+.todo-priority {
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.todo-checkbox {
+  margin-right: 10px;
+  accent-color: #7063d8;
+}
+
+.edit-btn,
+.delete-btn {
+  margin-top: 10px;
+  margin-right: 8px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 180ms ease;
+}
+
+.edit-btn {
+  background-color: #eeecff;
+  color: #6254c7;
+}
+
+.edit-btn:hover {
+  background-color: #ded9ff;
+}
+
+.delete-btn {
+  background-color: #fff0f0;
+  color: #c44848;
+}
+
+.delete-btn:hover {
+  background-color: #ffdddd;
+}
