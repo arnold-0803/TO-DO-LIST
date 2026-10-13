@@ -10,6 +10,26 @@ body {
   color: #20243a;
 }
 
+
+/* Workspace header */
+
+.workspace-header {
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e7e9f0;
+}
+
+.workspace-header h2 {
+  margin: 8px 0;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+.workspace-header .workspace-subtitle {
+  margin: 0;
+  font-size: 14px;
+}
+
 .app-layout {
   display: grid;
   grid-template-columns: 240px minmax(0, 1fr) 300px;
@@ -80,6 +100,16 @@ body {
 
 .projects button:hover {
   background-color: #303751;
+}
+
+.projects button.active-project {
+  background-color: #7063d8;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 12%);
+}
+
+.projects button.active-project:hover {
+  background-color: #6254c7;
 }
 
 /* Project section heading */
@@ -166,4 +196,237 @@ body {
 
 .delete-btn:hover {
   background-color: #ffdddd;
+}
+
+
+/* Todo editing form */
+
+.todo-card .edit-input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 8px 0 14px;
+  padding: 10px 12px;
+  border: 1px solid #e0e3ed;
+  border-radius: 8px;
+  background-color: #fafbfe;
+  color: #20243a;
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.todo-card .edit-input:focus {
+  border-color: #7063d8;
+  box-shadow: 0 0 0 3px rgb(112 99 216 / 12%);
+}
+
+.todo-card textarea.edit-input {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.todo-card .save-btn {
+  margin-top: 8px;
+  padding: 9px 16px;
+  border: none;
+  border-radius: 7px;
+  background-color: #7063d8;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 180ms ease;
+}
+
+.todo-card .save-btn:hover {
+  background-color: #6254c7;
+}
+
+/* Task creation panel */
+
+.task-panel h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.task-panel .panel-subtitle {
+  margin-bottom: 28px;
+  font-size: 14px;
+}
+
+/* Form labels and fields */
+
+#todo-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#todo-form label {
+  margin-bottom: 8px;
+  color: #424963;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#todo-form input,
+#todo-form textarea,
+#todo-form select {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 11px 12px;
+  border: 1px solid #e0e3ed;
+  border-radius: 8px;
+  background-color: #fafbfe;
+  color: #20243a;
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+/* Highlight the field being used */
+
+#todo-form input:focus,
+#todo-form textarea:focus,
+#todo-form select:focus {
+  border-color: #7063d8;
+  box-shadow: 0 0 0 3px rgb(112 99 216 / 12%);
+}
+
+/* Description field */
+
+#todo-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Create task button */
+
+#add-todo {
+  padding: 13px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #7063d8;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+#add-todo:hover {
+  background-color: #6254c7;
+}
+
+#add-todo:active {
+  transform: translateY(1px);
+}
+
+
+/* Add project form */
+
+#project-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#project-name {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #414965;
+  border-radius: 8px;
+  background-color: #292f49;
+  color: #ffffff;
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+#project-name::placeholder {
+  color: #a0a8c0;
+}
+
+#project-name:focus {
+  border-color: #9388ff;
+  box-shadow: 0 0 0 3px rgb(147 136 255 / 15%);
+}
+
+#add-project {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #414965;
+  border-radius: 8px;
+  background-color: #303751;
+  color: #e6e8f5;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+#add-project:hover {
+  border-color: #7063d8;
+  background-color: #3a3e60;
+}
+
+/* Empty project state */
+
+.empty-state {
+  margin-top: 20px;
+  padding: 48px 24px;
+  border: 1px dashed #d8dbea;
+  border-radius: 12px;
+  background-color: rgb(255 255 255 / 60%);
+  text-align: center;
+}
+
+.empty-state h3 {
+  margin: 0 0 10px;
+  color: #343a53;
+  font-size: 18px;
+}
+
+.empty-state p {
+  max-width: 340px;
+  margin: 0 auto;
+  color: #8990a6;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* Task priority indicators */
+
+.priority-indicator {
+  display: table;
+  margin: 8px 0 14px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.priority-high {
+  background-color: #fff0f0;
+  color: #c44848;
+}
+
+.priority-medium {
+  background-color: #fff5df;
+  color: #986616;
+}
+
+.priority-low {
+  background-color: #e8f7ef;
+  color: #287a50;
 }
