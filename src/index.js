@@ -66,3 +66,7 @@ function renderProjectOptions () {
 loadProjects();
 renderProjectOptions();
 renderProjects();
+
+if(projects.length > 0){
+  renderTodos(projects[0]);
+}

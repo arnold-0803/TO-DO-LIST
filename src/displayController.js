@@ -15,6 +15,10 @@ export function renderProjects() {
 
     projectButton.textContent = project.name;
 
+    if(project === projects[0]){
+      projectButton.classList.add("active-project");
+    }
+
     projectButton.addEventListener("click", () => {
       document
         .querySelectorAll(".projects button")
